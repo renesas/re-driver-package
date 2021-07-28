@@ -1,0 +1,339 @@
+/******************************************************************************/
+/*               SDK Rev History                                              */
+/*																		      */ 
+/* There is English version of explanation in this bottom side.               */
+/******************************************************************************/
+
+20th/Jul/21  Rev1.40
+20th/Jan/21  Rev1.30
+25th/Aug/20  Rev1.20
+15th/Mar/20  Rev1.10
+8th/Dec/19   Rev1.01
+30th/Aug/19  Rev1.00 
+05th/July/19 Rev072
+07th/May/19  Rev071
+
+-------------------------------------------------------------------------------
+*Including Driver
+[ARM CMSIS] v5.40
+[Device Hal]
+ R_CORE:Startup (initial operating clock, mode, etc.)
+ R_I2C:I2C bus interface
+ R_SPI:Serial peripheral interface
+ R_USART:Serial communication interface
+ R_SYS: -Clock generation circuit
+	-Power control mode of low-power-consumption functions
+	-Option setting memory
+	-Register write protection
+	-Interrupt controller unit
+ R_LPM:Low-power-consumption functions (other than power control mode)
+ R_ADC:14-bit A/D converter
+ R_DMAC:DMA controller
+ R_DTC:Data transfer controller
+ R_FLASH:Flash memory
+ R_GDT:2D graphic data conversion circuit
+ R_PIN:Multifunction pin controller
+ R_SMIP:Serial Memory In LCD(MIP LCD) Driver(Using SPI and AGT)
+ R_PMIP:Parallel Memory In LCD(MIP LCD) Driver(Using MLCD)
+-------------------------------------------------------------------------------
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*English
+[11th/Jan/2018]
+Rev060
+ -Supported WS2 Chip
+ -Change the SVD version to Rev070
+ -Add the peripheral of DMAC API
+ -Add the peripheral of DTC API
+ -Add the peripheral of GDT API(Only supprt Shurink)
+ -Add the code RAM copy function and Setting VOCR register in Main.c
+
+[5th/Feb/2019]
+Rev060a
+ -Fix generation error for Doxygen
+ -Fix initial definition value error for r_system_cfg.h
+
+[18th/Mar/2019]
+Rev070
+ -Supported WS3 Chip
+ -Supported GCC : Attention: GDT is only checked for build.
+ -Supported project of e2 studio which is IDE for Renesas
+
+[07th/May/2019]
+Rev071
+ -Change the SVD version to Rev070B
+ -Change the folder structure and project file name
+  Zip name:"Sotb_prottype"->"Renesas_DFP"
+  Project file name:"test"->"Project"
+ -Add the definition into Linker file for IAR and GCC.
+  It puts on RAM about standard library using in this drivers.
+  About Linker file
+   IAR:.icf
+   GCC:.LD
+
+ -Add the compile option "-fno-jump-tables" to prevent generate table jump code in GCC project.
+
+[31/June/19]
+Rev072
+ -Supported specification previous information User's manual Rev080.
+ -Chaged SVD version to Rev070C
+ -A bit fix to LPM and SYS driver as supporting discharge feature of VBB.
+
+[30th/Aug/19]
+Rev100
+ -Changed folder structure to suit CMSIS Package form and some device name folder and file changed to products name.
+  Changed Root folder name and deleted not needed folder in Driver folder.
+  Product name is RE01_1500KB. Some file and folder were changed this name.
+ -Added the file of SVD file.
+ -Changed SVD and IO Header file version to Rev1.00
+ 
+[8th/Dec/19]
+Rev101
+-New function
+  Added CMSIS-supported USB driver: USB Basic and USB PMSC
+-Bug fix
+  Eliminated the restriction of RAM macro definition in GDT and PMIP driver.
+-Bug fix
+  Fixed RAM allocation issue in LPM driver: internal functions previously not properly placed in RAM.
+-New documentation
+  Added new English specification documents for PMIP and SMIP driver.
+-Specification change
+  Changed the default code in Pin.c.
+  Ver 1.00: Only 1 pin not commented out
+  Ver 1.01: All pins commented out
+-Version update
+  Updated RE01_1500KB.svd/.h file to Rev 1.01
+-Specification change
+  Optimized MOCO and LOCO oscillation stabilization wait time in CMSIS Core (R_Core)
+
+
+[15th/Mar/20]
+Rev110
+-Update
+ SVD, I/O header file
+ Update in peripheral function definition file (RE01_1500KB.SVD, RE01_1500KB.h)
+ Added control bit for internal LDO circuit
+
+-Specification change
+ CMSIS-Core
+ Change in MOCO, LOCO, and SOSC oscillation stabilization waiting time
+ 
+-Specification change
+ CMSIS-Core, R_SYSTEM driver
+ Improved PLL clock setting check by preprocessor
+ Revised macro value in r_core_cfg.h when PLL clock is not used during startup
+
+-Specification change
+ CMSIS-Core, R_EHC driver
+ Added macro for LVD setting during EHC startup in r_core_cfg.h
+
+-Bug fix
+ R_EHC driver
+ Added LVD stabilization time during EHC startup in startup code(Tool news: R20TS0552)
+
+-Specification change
+ R_EHC driver
+ Change in LVD interrupt handler setting during EHC startup
+
+-Specification change
+ R_EHC driver
+ Change in LVD interrupt handler processing during EHC startup
+
+-Specification change
+ R_SYSTEM driver
+ Added macro definition to control a new protect register bit (PRC4 bit in PRCR register)
+
+-Specification change
+ R_PMIP driver
+ Added macro to select Memory In Pixel (MIP) LCD initialization data
+
+-R_PMIP driver
+ Modified the waiting time for VCOM output prohibition period during the start of data transfer
+ And default value of configration macro changed
+
+-Specification change
+ R_SMIP driver
+ Deleted unnecessary AGT module stop setting
+
+-Specification addition
+ R_SMIP driver
+ Added macro to switch the bit order of communication data format.
+
+-Bug fix
+ R_DTC driver
+ Fixed the issue where GetTransferByte function cannot be allocated to RAM using macro in r_dtc_cfg.h
+
+-Specification change
+ R_PIN
+ Following the procedure in user manual, PMR bit is now set to 0 before pin setting
+
+-Specification change
+ R_PIN
+ Related to bug fix in USART driver (No.17), steps are added to avoid SCIn pin to output Hi-Z
+
+-Bug fix
+ R_GDT driver
+ Fixed the issue where the program writes to invalid area when calling R_GDT_Shrink and R_GDT_Fount function (Tool news: R20TS0551)
+
+-Bug fix
+ USART driver
+ Improved pin setting procedure inside driver
+
+-Bug fix
+ USART driver
+ Fixed the issue where reception end interrupt does not perform properly when DTC is used for SCI9 reception process and DMAC is not used by any other processes
+
+-Bug fix
+ R_PMIP driver
+ Fixed the issue where R_PMIP_Send function cannot be allocated to RAM using macro in r_pmip_cfg.h
+
+-Bug fix
+ R_SPI driver
+ Fixed incorrect communication data format setting.
+ Fixed the issue where communication data format is inversely set by the control function.
+
+
+[25th/Aug/20]
+-Specification change
+ R_ADC driver
+ Changed to not include functions and variables related to DMAC and DTC when DMAC and DTC are not used.
+
+-Specification change
+ R_PMIP driver
+ Changed to not include functions and variables related to DMAC when DMAC is not used.
+
+-Bug fix
+ R_SMIP driver
+ Fixed an issue where the VCOM setup or hold time does not match the value set in the r_smip_cfg.h file (previously announced in Tool News: R20TS0574)
+
+-Bug fix
+ R_SMIP driver
+ Fixed a problem in the AGT register write confirmation process that caused a loop until a timeout occurred (previously announced in Tool News: R20TS0574)
+
+-Bug fix
+ R_SMIP driver
+ Fixed problem where AGT timer not stopping after releasing the SMIP driver (previously announced in Tool News: R20TS0574).
+
+-Bug fix
+ R_SMIP driver
+ Fixed a problem where the data format of SPI does not follow the configuration setting (SMIP_CFG_SPI_BIT_ORDER definition) when R_SMIP_Resume function was executed.
+   -Changed the argument of SPI Control function to SMIP_PRV_SPI_BIT_ORDER
+
+-Specification change
+ R_SPI driver
+ Changed to not include functions and variables related to DMAC and DTC when DMAC and DTC are not used.
+
+-Specification change
+ R_USART driver
+ Changed to not include functions and variables related to DMAC and DTC when DMAC and DTC are not used.
+
+-Specification change
+ R_CORE
+ Added sub-clock oscillator drive capability switching options
+  -New register related to sub-clock oscillator drive capability switching is added.
+
+-Specification change
+ R_CORE
+ Modified the waiting time for VCOM output prohibition period during the start of data transfer
+  -Changed waiting time from 4 ms to 5 ms
+
+-Specification change
+ R_CORE
+ Changed the initial value of the reserved area and the security MPU area of Option Setting Memory.
+  -In Rev1.1, reserved area was always set to 00h. MCU can operate normally with 00h as initial value. However, initial value will be changed to FFh in Rev 1.2. 
+
+-Specification change
+ R_EHC driver
+ Added a configuration option to set user-specified voltage drop detection (LVD1) thresholds during steady-state operation to ensure optimal settings for EHC circuit specifications
+
+-Specification change
+ R_SYSTEM driver
+ Added sub-clock oscillator drive capability switching options
+  -New register related to sub-clock oscillator drive capability switching is added.
+
+-Specification change
+ R_DTC driver
+ Changed the RAM/ROM allocation of the DTC driver functions.
+
+-Specification change
+ e2 studio J-Link Debugger Settings
+ Changed the ÅgReset before downloadÅh connection setting from "No" to "Yes" (following recommended setting described in RE01 e2 studio notes for usage (R01AN0552EJ0100)).
+
+
+[20th/Jan/21]
+-Specification change
+ Linker file
+ Added standard library function to expand RAM
+
+-Bug fix
+ CMSIS-Core(R_Core)
+ External noise immunity enhancement and current reduction measures (QUICK MODE) when EHC is not used (Tool News: R20TS0635)
+
+-Specification change
+ CMSIS-Core(R_Core)
+ Changed the argument when calling the R_LPM_IOPowerSupplyModeSet function in the main function from the direct value (0x00) to the define value (LPM_IOPOWER_SUPPLY_NONE).
+
+-Specification change
+ CMSIS-Core(R_Core)
+ Creating a heap area entity in the GCC environment
+ -Call Stack size and Heap size can be changed from r_system_cfg.h in GCC environment.
+
+-Specification change
+ R_EHC driver
+ Code copy processing change in r_ehc_Startup function due to Linker file change
+
+-Specification change
+ R_SYSTEM driver
+ Removed the following three definitions that are not working
+ -SYSTEM_CFG_STACK_MAIN_BYTES
+ -SYSTEM_CFG_STACK_PROCESS_BYTES
+ -SYSTEM_CFG_HEAP_BYTES
+
+-Bug fix
+ R_PIN
+ Delete unnecessary CCC pin setting function (R_CCC_Pinset / R_CCC_Pinclr)
+
+-Specification change
+ R_PIN
+ Added ICU all channel setting function (R_ICU_Pinset / R_ICU_Pinclr)
+
+-Specification change
+ R_PIN
+ Separate the R_GPT_COM_Pinset / R_GPT_COM_Pinclr functions as follows:
+ ÅE R_GPT_COMA_Pinset / R_GPT_COMA_Pinclr
+ ÅE R_GPT_COMB_Pinset / R_GPT_COMA_Pinclr
+
+[20th/Jul/21]
+-Specification change
+ Changed the package name from RE01 1500KB Group CMSIS Driver Package to RE01 1500KB Group Software Development Kit (CMSIS Driver Package).
+
+-Specification change
+ R_EHC driver
+ Changed code copy processing in r_ehc_Startup function when using IAR compiler.
+
+-Update
+ R_SYSTEM driver
+ The following inline functions have been updated to comply with ARM CMSIS pack Ver.5.7.0. 
+ R_NVIC_EnableIRQ, R_NVIC_GetEnableIRQ, R_NVIC_DisableIRQ, R_NVIC_GetPendingIRQ,
+ R_NVIC_SetPendingIRQ, R_NVIC_ClearPendingIRQ, R_NVIC_SetPriority, R_NVIC_SetVector, 
+ R_NVIC_GetVector
+
+-Specification change
+ R_DTC driver
+ Added R_DTC_GetAvailabilitySrc function and R_DTC_Release function.
+
+-Specification change
+ R_DMAC driver
+ Added R_DMAC_GetAvailabilitySrc function and R_DMAC_Release function.
+
+-Specification change
+ R_PMIP driver
+ Added R_PMIP_Reconfig function.
+
+-Specification change
+ R_SPI, R_USART, R_ADC driver
+ When using DTC, change the process up to the execution of the R_DTC_Close function
+  *Added a process to clear the startup factor used in the driver and check that there are no valid DTC startup factors remaining.
+  *Changed to the specification to execute R_DTC_Close processing only when there is no valid DTC activation factor.

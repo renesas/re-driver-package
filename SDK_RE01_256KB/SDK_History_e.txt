@@ -1,0 +1,135 @@
+/******************************************************************************/
+/*               SDK Rev History                                              */
+/*																		      */ 
+/* There is English version of explanation in this bottom side.               */
+/******************************************************************************/
+
+20th/Jul/21  Rev1.20
+20th/Jan/21  Rev1.10
+1st/June/20  Rev1.00
+
+-------------------------------------------------------------------------------
+*Including Driver
+[ARM CMSIS] v5.40
+[Device Hal]
+ R_CORE:Startup (initial operating clock, mode, etc.)
+ R_I2C:I2C bus interface
+ R_SPI:Serial peripheral interface
+ R_USART:Serial communication interface
+ R_SYS: -Clock generation circuit
+	-Power control mode of low-power-consumption functions
+	-Option setting memory
+	-Register write protection
+	-Interrupt controller unit
+ R_LPM:Low-power-consumption functions (other than power control mode)
+ R_ADC:14-bit A/D converter
+ R_DMAC:DMA controller
+ R_DTC:Data transfer controller
+ R_FLASH:Flash memory
+ R_GDT:2D graphic data conversion circuit
+ R_PIN:Multifunction pin controller
+ R_SMIP:Serial Memory In LCD(MIP LCD) Driver(Using SPI and AGT)
+ R_PMIP:Parallel Memory In LCD(MIP LCD) Driver(Using MLCD)
+-------------------------------------------------------------------------------
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*English
+[1st/June/2020]
+Rev100 First Release
+
+
+[20th/Jan/21]
+-Specification change
+ Linker file
+ Added standard library function to expand RAM
+
+-Clerical error correction
+ CMSIS-Core(R_CORE),R_SYSTEM driver
+ Removed Testing comments on FLL features
+
+-Bug fix
+ CMSIS-Core(R_CORE)
+ External noise immunity enhancement and current reduction measures (QUICK MODE) when EHC is not used (Tool News: R20TS0635)
+
+-Specification change
+ Main function(R_CORE)
+ Changed the argument when calling the R_LPM_IOPowerSupplyModeSet function from the direct value (0x00) to the define value (LPM_IOPOWER_SUPPLY_NONE).
+
+-Specification change
+ CMSIS-Core(R_CORE)
+ Creating a heap area entity in the GCC environment
+ -Call Stack size and Heap size can be changed from r_system_cfg.h in GCC environment.
+
+-Specification change
+ R_EHC driver
+ Code copy processing change in r_ehc_Startup function due to Linker file change
+
+-Specification change
+ R_SYSTEM driver
+ Fixed event link definition in r_system_cfg.h
+
+-Specification change
+ R_SYSTEM driver
+ Removed the following three definitions that are not working
+ -SYSTEM_CFG_STACK_MAIN_BYTES
+ -SYSTEM_CFG_STACK_PROCESS_BYTES
+ -SYSTEM_CFG_HEAP_BYTES
+
+-Bug fix
+ R_PIN
+ Added RTC terminal setting function (R_RTC_Pinset / R_RTC_Pinclr)
+
+-Specification change
+ R_PIN
+ Added ICU all channel setting function (R_ICU_Pinset / R_ICU_Pinclr)
+
+-Specification change
+ R_PIN
+ Separate the R_GPT_COM_Pinset / R_GPT_COM_Pinclr functions as follows:
+ ÅE R_GPT_COMA_Pinset / R_GPT_COMA_Pinclr
+ ÅE R_GPT_COMB_Pinset / R_GPT_COMA_Pinclr
+
+-Specification change
+ R_PIN
+ Removed the include of RE01_256KB.h
+
+-Bug fix
+ R_DTC driver
+ Fixed the problem that the GetTransferByte function cannot be allocated to RAM with the macro r_dtc_cfg.h.
+-Added DTC_CFG_R_DTC_GET_TRANSFER_BYTE definition to r_dtc_cfg.h
+
+
+[20th/Jul/21]
+-Specification change
+ Changed the package name from RE01 256KB Group CMSIS Driver Package to RE01 256KB Group Software Development Kit (CMSIS Driver Package).
+
+-Specification change
+ R_EHC driver
+ Changed code copy processing in r_ehc_Startup function when using IAR compiler.
+
+-Update
+ R_SYSTEM driver
+ The following inline functions have been updated to comply with ARM CMSIS pack Ver.5.7.0. 
+ R_NVIC_EnableIRQ, R_NVIC_GetEnableIRQ, R_NVIC_DisableIRQ, R_NVIC_GetPendingIRQ,
+ R_NVIC_SetPendingIRQ, R_NVIC_ClearPendingIRQ, R_NVIC_SetPriority, R_NVIC_SetVector, 
+ R_NVIC_GetVector
+
+-Specification change
+ R_DTC driver
+ Added R_DTC_GetAvailabilitySrc function and R_DTC_Release function.
+
+-Specification change
+ R_DMAC driver
+ Added R_DMAC_GetAvailabilitySrc function and R_DMAC_Release function.
+
+-Specification change
+ R_PMIP driver
+ Added R_PMIP_Reconfig function.
+
+-Specification change
+ R_SPI, R_USART, R_ADC driver
+ When using DTC, change the process up to the execution of the R_DTC_Close function
+  *Added a process to clear the startup factor used in the driver and check that there are no valid DTC startup factors remaining.
+  *Changed to the specification to execute R_DTC_Close processing only when there is no valid DTC activation factor.

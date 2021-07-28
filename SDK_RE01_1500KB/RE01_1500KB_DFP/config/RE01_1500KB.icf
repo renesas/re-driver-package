@@ -1,0 +1,165 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_1.xml" */
+/*-Specials-*/
+define symbol __ICFEDIT_intvec_start__ = 0x00000000;
+/*-Memory Regions-*/
+define symbol __ICFEDIT_region_IROM1_start__ = 0x00000000;
+define symbol __ICFEDIT_region_IROM1_end__   = 0x000003ff;
+define symbol __ICFEDIT_region_IROM2_start__ = 0x0000043C;
+define symbol __ICFEDIT_region_IROM2_end__   = 0x0017FFFF;
+define symbol __ICFEDIT_region_EROM1_start__ = 0x0;
+define symbol __ICFEDIT_region_EROM1_end__   = 0x0;
+define symbol __ICFEDIT_region_EROM2_start__ = 0x0;
+define symbol __ICFEDIT_region_EROM2_end__   = 0x0;
+define symbol __ICFEDIT_region_EROM3_start__ = 0x0;
+define symbol __ICFEDIT_region_EROM3_end__   = 0x0;
+define symbol __ICFEDIT_region_IRAM1_start__ = 0x20000400;  // Change the starting address of RAM for the MTB.
+define symbol __ICFEDIT_region_IRAM1_end__   = 0x2003FFFF;
+define symbol __ICFEDIT_region_IRAM2_start__ = 0x00000000;
+define symbol __ICFEDIT_region_IRAM2_end__   = 0x00000000;
+define symbol __ICFEDIT_region_ERAM1_start__ = 0x0;
+define symbol __ICFEDIT_region_ERAM1_end__   = 0x0;
+define symbol __ICFEDIT_region_ERAM2_start__ = 0x0;
+define symbol __ICFEDIT_region_ERAM2_end__   = 0x0;
+define symbol __ICFEDIT_region_ERAM3_start__ = 0x0;
+define symbol __ICFEDIT_region_ERAM3_end__   = 0x0;
+/*-Sizes-*/
+define symbol __ICFEDIT_size_cstack__ = 0x400;
+define symbol __ICFEDIT_size_heap__   = 0x400;
+/**** End of ICF editor section. ###ICF###*/
+
+define symbol __OptionSetting_start__ = 0x00000400;
+define symbol __OptionSetting_end__   = 0x0000043B;
+define symbol __OptionSettingID_start__  = 0x0100A150;
+define symbol __OptionSettingID_end__    = 0x0100A15F;
+define symbol __OptionSettingAWS_start__ = 0x0100A164;
+define symbol __OptionSettingAWS_end__   = 0x0100A167;
+
+define memory mem with size = 4G;
+define region IROM_region   =   mem:[from __ICFEDIT_region_IROM1_start__ to __ICFEDIT_region_IROM1_end__]
+                              | mem:[from __ICFEDIT_region_IROM2_start__ to __ICFEDIT_region_IROM2_end__];
+define region EROM_region   =   mem:[from __ICFEDIT_region_EROM1_start__ to __ICFEDIT_region_EROM1_end__]
+                              | mem:[from __ICFEDIT_region_EROM2_start__ to __ICFEDIT_region_EROM2_end__]
+                              | mem:[from __ICFEDIT_region_EROM3_start__ to __ICFEDIT_region_EROM3_end__];
+define region IRAM_region   =   mem:[from __ICFEDIT_region_IRAM1_start__ to __ICFEDIT_region_IRAM1_end__]
+                              | mem:[from __ICFEDIT_region_IRAM2_start__ to __ICFEDIT_region_IRAM2_end__];
+define region ERAM_region   =   mem:[from __ICFEDIT_region_ERAM1_start__ to __ICFEDIT_region_ERAM1_end__]
+                              | mem:[from __ICFEDIT_region_ERAM2_start__ to __ICFEDIT_region_ERAM2_end__]
+                              | mem:[from __ICFEDIT_region_ERAM3_start__ to __ICFEDIT_region_ERAM3_end__];
+define region OptionSetting_region =   mem:[from __OptionSetting_start__ to __OptionSetting_end__];
+define region OptionSettingID_region  =   mem:[from __OptionSettingID_start__ to __OptionSettingID_end__];
+define region OptionSettingAWS_region =   mem:[from __OptionSettingAWS_start__ to __OptionSettingAWS_end__];
+
+define block CSTACK    with alignment = 8, size = __ICFEDIT_size_cstack__   { };
+define block HEAP      with alignment = 8, size = __ICFEDIT_size_heap__     { };
+define block .ramvect  with alignment = 256, size = 0x400                   { };
+define block .ramobj_init with fixed order
+{
+    /* If you need RAM allocation per file, add "XXXX.o" to this definition. */
+    ro code section *_init object pin.o,
+    ro data section *_init object pin.o,
+    
+    /* Library to be allocated to RAM. */
+    ro code section *_init object dl6M_tln.a,
+    ro data section *_init object dl6M_tln.a,
+    ro code section *_init object m6M_tl.a,
+    ro data section *_init object m6M_tl.a,
+    ro code section *_init object rt6M_tl.a,
+    ro data section *_init object rt6M_tl.a,
+    ro code section *_init object shb_l.a,
+    ro data section *_init object shb_l.a,
+}
+except
+{
+    /* The following functions need to be allocated to ROM. */
+    ro code section *_init object cstartup_M.o,
+    ro data section *_init object cstartup_M.o,
+    ro code section *_init object low_level_init.o,
+    ro data section *_init object low_level_init.o,
+    ro code section *_init object cmain.o,
+    ro data section *_init object cmain.o,
+};
+
+define block .ramobj with fixed order
+{
+    /* If you need RAM allocation per file, add "XXXX.o" to this definition. */
+    rw code object pin.o,
+    rw data object pin.o,
+    
+    /* Library to be allocated to RAM. */
+    rw code object dl6M_tln.a,
+    rw data object dl6M_tln.a,
+    rw code object m6M_tl.a,
+    rw data object m6M_tl.a,
+    rw code object rt6M_tl.a,
+    rw data object rt6M_tl.a,
+    rw code object shb_l.a,
+    rw data object shb_l.a,
+}
+except
+{
+    /* The following functions need to be allocated to ROM. */
+    rw code object cstartup_M.o,
+    rw data object cstartup_M.o,
+    rw code object low_level_init.o,
+    rw data object low_level_init.o,
+    rw code object cmain.o,
+    rw data object cmain.o,
+};
+
+initialize by copy { readwrite };
+
+if (isdefinedsymbol(__USE_DLIB_PERTHREAD))
+{
+  // Required in a multi-threaded application
+  initialize by copy with packing = none { section __DLIB_PERTHREAD };
+}
+
+// for sram copy
+initialize manually with packing = none { section .ramfunc };
+initialize manually with packing = none { section .ramdata };
+initialize manually with packing = none
+{
+    /* If you need RAM allocation per file, add "XXXX.o" to this definition. */
+    ro object pin.o,
+    rw object pin.o,
+    
+    /* Library to be allocated to RAM. */
+    ro object dl6M_tln.a,
+    rw object dl6M_tln.a,
+    ro object m6M_tl.a,
+    rw object m6M_tl.a,
+    ro object rt6M_tl.a,
+    rw object rt6M_tl.a,
+    ro object shb_l.a,
+    rw object shb_l.a,
+}
+except
+{
+    /* The following functions need to be allocated to ROM. */
+    ro object cstartup_M.o,
+    rw object cstartup_M.o,
+    ro object low_level_init.o,
+    rw object low_level_init.o,
+    ro object cmain.o,
+    rw object cmain.o,
+};
+
+do not initialize  { section .noinit };
+
+initialize manually with packing = none { section .ehc_ramfunc };
+/* Place ".intvec" section at ROM address __ICFEDIT_intvec_start__(=0x00000000). */
+place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec };
+
+/* Place ".ramfunc_init" section and ".ramobj_init" section in ROM */
+place in IROM_region  { readonly, section .ramfunc_init, block .ramobj_init, section .ramdata_init, section .ehc_ramfunc_init };
+place in EROM_region  { readonly section application_specific_ro };
+/* Place ".ramfunc" section and ".ramobj" section in RAM */
+place in IRAM_region  { first block .ramvect, readwrite, block CSTACK, block HEAP, section .ramfunc, block .ramobj, section .ehc_ramfunc };
+/* Place ".ramdata" section in RAM */
+place in IRAM_region  { section .ramdata };
+place in ERAM_region  { readwrite section application_specific_rw };
+place in OptionSetting_region{section .OptionSetting};
+place in OptionSettingID_region{section .OptionSettingID};
+place in OptionSettingAWS_region{section .OptionSettingAWS};
