@@ -4,6 +4,10 @@ Software Development Kit (CMSIS Driver Package) for RE family is a driver packag
 # Taerget Devices
 RE01 1500KB group,  RE01 256KB group
 
+# Current Release
+RE01 1500KB group Software Development Kit (CMSIS Driver Package) Rev1.40  
+RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20
+
 # How to use the SDK
 Please refer to the Getting Started Guide for how to use the SDK. 
 The Getting Started is a document that contains the following essential information for development. We recommend that you refer to it when starting development.
