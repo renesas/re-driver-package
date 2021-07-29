@@ -13,7 +13,7 @@ RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20
 
 # How to use the SDK
 Please refer to the Getting Started Guide for how to use the SDK. 
-The Getting Started is a document that contains the following essential information for development. We recommend that you refer to it when starting development.
+The Getting Started is a document that contains the following essential information for development. We recommend that you refer to it when starting development.  
 -Procedure/method of using driver (initial clock, pin setting, interrupt setting, program allocation method into RAM, etc.)  
 -How to set up the debugger in the development environment  
 -trouble shooting  
