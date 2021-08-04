@@ -1,4 +1,4 @@
-# About this ripository aa
+# About this ripository 
 This repository provides Software Development Kit (CMSIS Driver Package) for RE family.
 Software Development Kit (CMSIS Driver Package) provided by this repository is the same as that provided by renesas web.
 There is also an SDK using SC that can be developed using the GUI configurator in the software development kit for RE family.
