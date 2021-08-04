@@ -25,8 +25,3 @@ The Getting Started is a document that contains the following essential informat
 -How to set up the debugger in the development environment  
 -trouble shooting  
 https://www.renesas.com/document/apn/re01-1500kb-256kb-group-getting-started-guide-development-using-cmsis-package-application-note
-
-
-# Related page
-RE Software Development Kit: https://www.renesas.com/software-tool/re-software-development-kit  
-Getting Started Guide: https://www.renesas.com/document/apn/re01-1500kb-256kb-group-getting-started-guide-development-using-cmsis-package-application-note
