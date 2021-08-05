@@ -14,13 +14,13 @@ RE01 1500KB group,  RE01 256KB group
 
 
 # Development environment
--Boards & Kits  
+**・Boards & Kits**  
 When using RE01 1500kB group  
 https://www.renesas.com/ek-re01-1500kb  
 When using RE01 256kB group  
 https://www.renesas.com/ek-re01-256kb  
 <br>
--Development Tools  
+**・Development Tools**  
 | Environment | IED | compiler | debugger |
 | ------------- | ------------- | ------------- | ------------- |
 | GCC | [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio)  | GNU C/C++ Compiler | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)),IAR I-Jet |
