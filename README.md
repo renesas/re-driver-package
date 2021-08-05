@@ -22,7 +22,7 @@ https://www.renesas.com/ek-re01-256kb
 <br>
 **・Development Tools**  
 The Software Development Kit (CMSIS Driver Package) for RE family supports two environments, GCC and IAR.  
-| Environment | IED | compiler[^*1] | debugger[^*2] |
+| Environment | IED | compiler<sup>*1</sup> | debugger<sup>*2</sup> |
 | ------------- | ------------- | ------------- | ------------- |
 | GCC | [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio)  | GNU C/C++ Compiler | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)),IAR I-Jet |
 | IAR | [EWARM](https://www.iar.com/ewarm)  | IAR C/C++ Compiler for Arm | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)), Renesas E2/E2 lite |  
