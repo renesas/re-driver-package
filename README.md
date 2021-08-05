@@ -29,6 +29,13 @@ The Software Development Kit (CMSIS Driver Package) for RE family supports two e
 
 *1: It is installed when IED is installed.  
 *2: When developing with the Evaluation Kit introduced in Boards & Kits, do not need to purchase it separately. J-Link/OB is installed on the Evaluation Kit. 
+<br>
+**・Supported Tool Versions**  
+| IED | RE01 1500KB | RE01 256KB |
+| ------------- | ------------- | ------------- |
+| [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio) | 2020-07 or later | 2020-07 or later |
+| [EWARM](https://www.iar.com/ewarm) | 8.40.2 or later | 8.50.6 or later |  
+
 
 # How to use the SDK
 Please refer to the Getting Started Guide for how to use the SDK. 
