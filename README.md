@@ -19,11 +19,11 @@ RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20
 
 # Development environment
 -Development Tools  
-| environment | IED | compiler | debugger |
+| Environment | IED | compiler | debugger |
 | ------------- | ------------- | ------------- | ------------- |
 | GCC | [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio)  | GNU C/C++ Compiler | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)),IAR I-Jet |
 | IAR | [EWARM](https://www.iar.com/ewarm)  | IAR C/C++ Compiler for Arm | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)), Renesas E2/E2 lite |
-  
+<br>
 
 -Boards & Kits  
 When using RE01 1500kB group  
