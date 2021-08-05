@@ -27,7 +27,7 @@ Software Development Kit (CMSIS Driver Package) for RE family supports two envir
 Please download according to your environment.  
 | Environment | IED | compiler<sup>*1</sup> | debugger<sup>*2</sup> |
 | ------------- | ------------- | ------------- | ------------- |
-| GCC | [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio)  | GNU C/C++ Compiler | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)),IAR I-Jet |
+| GCC | [e2 studio](https://www.renesas.com/software-tool/e-studio)  | GNU C/C++ Compiler | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)),IAR I-Jet |
 | IAR | [EWARM](https://www.iar.com/ewarm)  | IAR C/C++ Compiler for Arm | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)), Renesas E2/E2 lite |  
 
 *1: It is installed when IED is installed.  
@@ -36,11 +36,12 @@ Please download according to your environment.
 **・Supported Tool Versions**  
 | IED | RE01 1500KB | RE01 256KB |
 | ------------- | ------------- | ------------- |
-| [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio) | 2020-07 or later | 2020-07 or later |
+| [e2 studio](https://www.renesas.com/software-tool/e-studio) | 2020-07 or later | 2020-07 or later |
 | [EWARM](https://www.iar.com/ewarm) | 8.40.2 or later | 8.50.6 or later |  
 
 
 # How to use the SDK
+For development, use SDK_1500KB_DFP or SDK_256KB_DFP uploaded to this repository. These files are compatible with both GCC and IAR environments. 
 Please refer to the Getting Started Guide for how to use the SDK. 
 The Getting Started is a document that contains the following essential information for development. We recommend that you refer to it when starting development.  
 -Procedure/method of using driver (initial clock, pin setting, interrupt setting, program allocation method into RAM, etc.)  
