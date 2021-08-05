@@ -27,7 +27,7 @@ The Getting Started is a document that contains the following essential informat
 https://www.renesas.com/document/apn/re01-1500kb-256kb-group-getting-started-guide-development-using-cmsis-package-application-note
 
 
-#Related page  
+# Related page  
 ●RE family Product page: https://www.renesas.com/re  
 ●Software development tools: https://www.renesas.com/re_tools  
 ●Evaluation Kits  
