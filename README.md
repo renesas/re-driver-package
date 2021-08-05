@@ -18,18 +18,17 @@ RE01 1500KB group Software Development Kit (CMSIS Driver Package) Rev1.40
 RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20  
 
 # Development environment
--Development Tools  
-| Environment | IED | compiler | debugger |
-| ------------- | ------------- | ------------- | ------------- |
-| GCC | [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio)  | GNU C/C++ Compiler | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)),IAR I-Jet |
-| IAR | [EWARM](https://www.iar.com/ewarm)  | IAR C/C++ Compiler for Arm | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)), Renesas E2/E2 lite |
-<br>
-
 -Boards & Kits  
 When using RE01 1500kB group  
 https://www.renesas.com/ek-re01-1500kb  
 When using RE01 256kB group  
 https://www.renesas.com/ek-re01-256kb  
+<br>
+-Development Tools  
+| Environment | IED | compiler | debugger |
+| ------------- | ------------- | ------------- | ------------- |
+| GCC | [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio)  | GNU C/C++ Compiler | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)),IAR I-Jet |
+| IAR | [EWARM](https://www.iar.com/ewarm)  | IAR C/C++ Compiler for Arm | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)), Renesas E2/E2 lite |
 
 # How to use the SDK
 Please refer to the Getting Started Guide for how to use the SDK. 
