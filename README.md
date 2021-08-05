@@ -19,15 +19,15 @@ RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20
 
 # Development environment
 -Development Tools  
-| aaa | aaa |
-| ------------- | ------------- |
-| aaa  | aaa  |
-| aaa  | aaa  |
+| aaa | aaa | aaa |
+| ------------- | ------------- | ------------- |
+| aaa  | aaa  | aaa  |
+| aaa  | aaa  | aaa  |
 
 
 -Boards & Kits
 When using RE01 1500kB group  
-[test](https://www.renesas.com/ek-re01-1500kb)  
+https://www.renesas.com/ek-re01-1500kb
 When using RE01 256kB group  
 https://www.renesas.com/ek-re01-256kb  
 
