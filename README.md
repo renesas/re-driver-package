@@ -14,6 +14,8 @@ RE01 1500KB group,  RE01 256KB group
 
 
 # Development environment
+To get started with development, you need to have a board, an IED, a compiler, and a debugger. Please prepare according to the following items. 
+
 **・Boards & Kits**  
 When using RE01 1500kB group  
 https://www.renesas.com/ek-re01-1500kb  
