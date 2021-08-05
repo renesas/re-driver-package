@@ -13,10 +13,6 @@ Software Development Kit (CMSIS Driver Package) for RE family is a driver packag
 RE01 1500KB group,  RE01 256KB group
 
 
-# Current Release
-RE01 1500KB group Software Development Kit (CMSIS Driver Package) Rev1.40  
-RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20  
-
 # Development environment
 -Boards & Kits  
 When using RE01 1500kB group  
