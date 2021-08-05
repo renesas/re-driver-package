@@ -17,6 +17,19 @@ RE01 1500KB group,  RE01 256KB group
 RE01 1500KB group Software Development Kit (CMSIS Driver Package) Rev1.40  
 RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20  
 
+# Development environment
+-Development Tools  
+| aaa | aaa |
+| ------------- | ------------- |
+| aaa  | aaa  |
+| aaa  | aaa  |
+
+
+-Boards & Kits
+When using RE01 1500kB group  
+https://www.renesas.com/ek-re01-1500kb  
+When using RE01 256kB group  
+https://www.renesas.com/ek-re01-256kb  
 
 # How to use the SDK
 Please refer to the Getting Started Guide for how to use the SDK. 
