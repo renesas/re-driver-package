@@ -21,13 +21,13 @@ RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20
 -Development Tools  
 |     | IED | compiler | debugger |
 | ------------- | ------------- | ------------- | ------------- |
-| GCC  | aaa  | aaa  | aaa  |
-| IAR  | aaa  | aaa  | aaa  |
+| GCC  | [e2 studio](https://www.renesas.com/jp/en/software-tool/e-studio)  | aaa  | aaa  |
+| IAR  | [EWARM](https://www.iar.com/ewarm)  | aaa  | aaa  |
+  
 
-
--Boards & Kits
+-Boards & Kits  
 When using RE01 1500kB group  
-https://www.renesas.com/ek-re01-1500kb
+https://www.renesas.com/ek-re01-1500kb  
 When using RE01 256kB group  
 https://www.renesas.com/ek-re01-256kb  
 
