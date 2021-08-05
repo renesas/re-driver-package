@@ -28,7 +28,7 @@ The Software Development Kit (CMSIS Driver Package) for RE family supports two e
 | IAR | [EWARM](https://www.iar.com/ewarm)  | IAR C/C++ Compiler for Arm | [SEGGER J-Link/J-Link OB](https://www.segger.com/products/debug-probes/j-link/)  ([J-Link software and documentation pack](https://www.segger.com/downloads/jlink/JLink_Windows.exe)), Renesas E2/E2 lite |  
 
 *1: It is installed when IED is installed.  
-*2: When developing with the Evaluation Kit introduced in Boards & Kits, do not need to purchase it separately. J-Link/OB is installed on the Evaluation Kit. 
+*2: When developing with the Evaluation Kit introduced in Boards & Kits, do not need to purchase it separately. J-Link/OB is installed on the Evaluation Kit.  
 <br>
 **・Supported Tool Versions**  
 | IED | RE01 1500KB | RE01 256KB |
