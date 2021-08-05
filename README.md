@@ -1,4 +1,4 @@
-# About this ripository 
+# About this repository 
 This repository provides Software Development Kit (CMSIS Driver Package) for RE family.
 Software Development Kit (CMSIS Driver Package) provided by this repository is the same as that provided by renesas web.
 There is also an SDK using SC that can be developed using the GUI configurator in the software development kit for RE family.
@@ -15,7 +15,7 @@ RE01 1500KB group,  RE01 256KB group
 
 # Current Release
 RE01 1500KB group Software Development Kit (CMSIS Driver Package) Rev1.40  
-RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20
+RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20  
 
 
 # How to use the SDK
@@ -25,3 +25,14 @@ The Getting Started is a document that contains the following essential informat
 -How to set up the debugger in the development environment  
 -trouble shooting  
 https://www.renesas.com/document/apn/re01-1500kb-256kb-group-getting-started-guide-development-using-cmsis-package-application-note
+
+
+#Related page
+●RE family Product page: https://www.renesas.com/re  
+●Software development tools: https://www.renesas.com/re_tools  
+●Evaluation Kits  
+ -EK-RE01 1500KB: https://www.renesas.com/ek-re01-1500kb  
+ -EK-RE01 256KB: https://www.renesas.com/ek-re01-256kb  
+●FAQ  
+ -Japanese: https://ja-support.renesas.com/knowledgeBase/category/31135  
+ -English: https://en-support.renesas.com/knowledgeBase/category/31133  
