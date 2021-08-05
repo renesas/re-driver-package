@@ -19,10 +19,10 @@ RE01 256KB group Software Development Kit (CMSIS Driver Package) Rev1.20
 
 # Development environment
 -Development Tools  
-| aaa | aaa | aaa |
-| ------------- | ------------- | ------------- |
-| aaa  | aaa  | aaa  |
-| aaa  | aaa  | aaa  |
+|     | IED | compiler | debugger |
+| ------------- | ------------- | ------------- | ------------- |
+| GCC  | aaa  | aaa  | aaa  |
+| IAR  | aaa  | aaa  | aaa  |
 
 
 -Boards & Kits
