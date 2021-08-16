@@ -1,10 +1,13 @@
 When using the source code in this repository, please use it within the scope of the following three licenses.  
 
 # Apache  
-https://github.com/renesas/re-driver-package/blob/re-development-20210730/SoftwareLicenceAgreement/LICENSE_Apache  
+https://github.com/renesas/re-driver-package/blob/main/Licence/LICENSE_Apache  
 
 # MIT  
-https://github.com/renesas/re-driver-package/blob/re-development-20210730/SoftwareLicenceAgreement/LICENSE_MIT  
+https://github.com/renesas/re-driver-package/blob/main/Licence/LICENSE_MIT  
 
 # RE_SoftwareLisenceAgreement 
-https://github.com/renesas/re-driver-package/blob/re-development-20210730/SoftwareLicenceAgreement/licence_tmp.txt  
+-Japanese  
+https://github.com/renesas/re-driver-package/blob/main/Licence/RE_SoftwareLicenceAgreement_JPN.pdf  
+-English  
+https://github.com/renesas/re-driver-package/blob/main/Licence/RE_SoftwareLicenceAgreement_ENG.pdf  
