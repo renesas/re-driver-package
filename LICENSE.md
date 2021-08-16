@@ -8,6 +8,6 @@ https://github.com/renesas/re-driver-package/blob/main/SoftwareLicence/LICENSE_M
 
 # RE_SoftwareLisenceAgreement 
 -Japanese  
-https://github.com/renesas/re-driver-package/blob/main/SoftwareLicence/RE_SoftwareLicenceAgreement_JPN.pdf  
+https://github.com/renesas/re-driver-package/blob/main/SoftwareLicence/RE_MCUS_SDK_SoftwareLicenceAgreement_JPN.pdf  
 -English  
-https://github.com/renesas/re-driver-package/blob/main/SoftwareLicence/RE_SoftwareLicenceAgreement_ENG.pdf  
+https://github.com/renesas/re-driver-package/blob/main/SoftwareLicence/RE_MCUS_SDK_SoftwareLicenceAgreement_ENG.pdf  
