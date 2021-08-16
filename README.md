@@ -53,7 +53,7 @@ https://www.renesas.com/document/apn/re01-1500kb-256kb-group-getting-started-gui
 # Related page  
 ●RE family Product page: https://www.renesas.com/re  
 ●Software development tools: https://www.renesas.com/re_tools  
-●RE Software Development Kit: https://www.renesas.com/re-cmsis
+●RE Software Development Kit: https://www.renesas.com/re-cmsis  
 ●Evaluation Kits  
  -EK-RE01 1500KB: https://www.renesas.com/ek-re01-1500kb  
  -EK-RE01 256KB: https://www.renesas.com/ek-re01-256kb  
