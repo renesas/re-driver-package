@@ -51,12 +51,12 @@ https://www.renesas.com/document/apn/re01-1500kb-256kb-group-getting-started-gui
 
 
 # Related page  
-●RE family Product page: https://www.renesas.com/re  
-●Software development tools: https://www.renesas.com/re_tools  
-●RE Software Development Kit: https://www.renesas.com/re-cmsis  
-●Evaluation Kits  
- -EK-RE01 1500KB: https://www.renesas.com/ek-re01-1500kb  
- -EK-RE01 256KB: https://www.renesas.com/ek-re01-256kb  
-●FAQ  
- -Japanese: https://ja-support.renesas.com/knowledgeBase/category/31135  
- -English: https://en-support.renesas.com/knowledgeBase/category/31133  
+●&nbsp;RE family Product page: https://www.renesas.com/re  
+●&nbsp;Software development tools: https://www.renesas.com/re_tools  
+●&nbsp;RE Software Development Kit: https://www.renesas.com/re-cmsis  
+●&nbsp;Evaluation Kits  
+ &nbsp;-EK-RE01 1500KB: https://www.renesas.com/ek-re01-1500kb  
+ &nbsp;-EK-RE01 256KB: https://www.renesas.com/ek-re01-256kb  
+●&nbsp;FAQ  
+ &nbsp;-Japanese: https://ja-support.renesas.com/knowledgeBase/category/31135  
+ &nbsp;-English: https://en-support.renesas.com/knowledgeBase/category/31133  
