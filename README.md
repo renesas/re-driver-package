@@ -4,14 +4,15 @@ Software Development Kit (CMSIS Driver Package) provided by this repository is t
 There is also an SDK using SC that can be developed using the GUI configurator in the software development kit for RE family.
 If you are using SDK using SC, please refer to the link below.   
 https://www.renesas.com/software-tool/re-software-development-kit
+<br>
 
 # Software Development Kit (CMSIS Driver Package)
 Software Development Kit (CMSIS Driver Package) for RE family is a driver package that can be used to increase development efficiency. The package includes startup code and drivers for the peripheral functions so users can start system development immediately. In this package, ARM® CMSIS compliant API driver software and Renesas driver software are provided.
-
+<br>
 
 # Taerget Devices
 RE01 1500KB group,  RE01 256KB group
-
+<br>
 
 # Development environment
 To get started with development, you need to have a board, an IED, a compiler, and a debugger. Please prepare according to the following items. 
@@ -38,7 +39,7 @@ Please download according to your environment.
 | ------------- | ------------- | ------------- |
 | [e2 studio](https://www.renesas.com/software-tool/e-studio) | 2020-07 or later | 2020-07 or later |
 | [EWARM](https://www.iar.com/ewarm) | 8.40.2 or later | 8.50.6 or later |  
-
+<br>
 
 # How to use the SDK
 For development, use SDK_1500KB_DFP or SDK_256KB_DFP uploaded to this repository. These files are compatible with both GCC and IAR environments. 
@@ -48,7 +49,7 @@ The Getting Started is a document that contains the following essential informat
 -How to set up the debugger in the development environment  
 -trouble shooting  
 https://www.renesas.com/document/apn/re01-1500kb-256kb-group-getting-started-guide-development-using-cmsis-package-application-note
-
+<br>
 
 # Related page  
 ●&nbsp;RE family Product page: https://www.renesas.com/re  
