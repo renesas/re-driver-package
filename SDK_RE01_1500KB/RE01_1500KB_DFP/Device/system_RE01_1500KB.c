@@ -18,7 +18,7 @@
  **********************************************************************************************************************/
 /***********************************************************************************************************************
  * File Name    : system_RE01_1500KB.c
- * Version      : 1.30
+ * Version      : 1.40
  * Description  : CMSIS Cortex-M# Device Peripheral Access Layer Source File for Device RE01_1500KB
  **********************************************************************************************************************/
 /***********************************************************************************************************************
@@ -86,6 +86,8 @@
  *                               Changed the Initial value of OptionSettingMemory[] at reserved area.
  *         : 24.11.2020 1.30     Added the operation when the EHC is not used, set QUICKMODE = 1
  *                               for external noise tolerance and current reduction.
+ *         : 10.12.2021 1.40     Modified "In the case of set SOSC drive capability and config are unequal"
+ *                                - system_sosc_start()
  **********************************************************************************************************************/
 /*
  * Copyright (c) 2009-2016 ARM Limited. All rights reserved.
@@ -1616,7 +1618,7 @@ static void system_sosc_start(void) /* @suppress("Function length") */
         /*----------------------------------------------------------------------
          * In the case of set SOSC drive capability and config are unequal
          *--------------------------------------------------------------------*/
-        if(SYSTEM_CFG_SOSC_DRIVE != SYSTEM->SOMCR_b.SODRV)
+        if(SYSTEM_CFG_SOSC_DRIVE != (SYSTEM->SOMCR & 0x03U))
         {
             /*------------------------------------------------------------------
              * Wait the SOSC clock stabilization (tSUBOSCOWT)

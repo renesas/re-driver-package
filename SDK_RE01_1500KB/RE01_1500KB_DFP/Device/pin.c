@@ -14,11 +14,11 @@
 * following link:
 * http://www.renesas.com/disclaimer 
 *
-* Copyright (C) 2018-2020 Renesas Electronics Corporation. All rights reserved.    
+* Copyright (C) 2018-2021 Renesas Electronics Corporation. All rights reserved.    
 **********************************************************************************************************************/
 /**********************************************************************************************************************
 * File Name    : Pin.c
-* Version      : 1.30
+* Version      : 1.50
 * Description  : Pin Setting
 **********************************************************************************************************************/
 /*********************************************************************************************************************
@@ -45,6 +45,7 @@
 *                               Add R_ICU_Pinset and R_ICU_Pinclr
 *                               Split R_GPT_COM_Pinset/clr function
 *                               into R_GPT_COMA_Pinset/clr and R_GPT_COMB_Pinset/clr
+*         : 25.11.2021 1.50     Fixed the bug that R12DA was not output.
 **********************************************************************************************************************/
 
 
@@ -3981,8 +3982,8 @@ void R_R12DA_Pinset(void)  // @suppress("Source file naming") @suppress("API fun
 //    PFS->P007PFS_b.ISEL = 0U;  /* 0: Do not use as an IRQn input pin,  1: Use as an IRQn input pin. */
 //    PFS->P007PFS_b.PSEL = 0U;  /* 0: Do not assign Peripheral */
 //    PFS->P007PFS_b.PMR  = 0U;  /* 0: Use the pin as a general I/O port, 1: Use the pin as a peripheral module. */
+//    PFS->P007PFS_b.PDR  = 0U;  /* 0: Input port,  1: Output port */
 //    PFS->P007PFS_b.ASEL = 1U;  /* 0: Do not use as an analog pin, 1: Use as an analog pin. */
-//    PFS->P007PFS_b.PDR  = 1U;  /* 0: Input port,  1: Output port */
 
 
     /* Enable protection for PFS function (Set to PWPR register) */

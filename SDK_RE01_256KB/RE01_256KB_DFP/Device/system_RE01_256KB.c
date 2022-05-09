@@ -18,7 +18,7 @@
  **********************************************************************************************************************/
 /***********************************************************************************************************************
  * File Name    : system_RE01_256KB.c
- * Version      : 1.10
+ * Version      : 1.20
  * Description  : CMSIS Cortex-M# Device Peripheral Access Layer Source File for Device RE01_256KB
  **********************************************************************************************************************/
 /***********************************************************************************************************************
@@ -44,6 +44,8 @@
  *         : 24.11.2020 1.10     Added the operation when the EHC is not used, set QUICKMODE = 1
  *                               for external noise tolerance and current reduction.
  *                               Deleted the comments as the FLL test has completed.
+ *         : 10.12.2021 1.20     Modified "In the case of set SOSC drive capability and config are unequal"
+ *                                - system_sosc_start()
  **********************************************************************************************************************/
 /*
  * Copyright (c) 2009-2016 ARM Limited. All rights reserved.
@@ -1338,7 +1340,7 @@ static void system_sosc_start(void) /* @suppress("Function length") */
         /*----------------------------------------------------------------------
          * In the case of set SOSC drive capability and config are unequal
          *--------------------------------------------------------------------*/
-        if(SYSTEM_CFG_SOSC_DRIVE != SYSC->SOMCR_b.SODRV)
+        if(SYSTEM_CFG_SOSC_DRIVE != (SYSC->SOMCR & 0x03U))
         {
             /*------------------------------------------------------------------
              * Wait the SOSC clock stabilization (tSUBOSCOWT)

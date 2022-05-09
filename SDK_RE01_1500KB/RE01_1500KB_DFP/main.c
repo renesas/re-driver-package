@@ -36,7 +36,7 @@ void LVD_for_EHC( void ) __attribute__ ((section(".ramfunc"))) ;   /* This is  U
 
 /***********************************************************************************************************************
 * Function Name: main
-* Revision     : 1.40
+* Revision     : 1.50
 * Description  : main function. Please add the code for your system.
 * Arguments    : none
 * Return Value : none

@@ -1,9 +1,10 @@
 /******************************************************************************/
 /*               SDK Rev History                                              */
-/*																		      */ 
+/*                                                                            */ 
 /* There is English version of explanation in this bottom side.               */
 /******************************************************************************/
 
+17th/Dec/21  Rev1.50
 20th/Jul/21  Rev1.40
 20th/Jan/21  Rev1.30
 25th/Aug/20  Rev1.20
@@ -15,17 +16,17 @@
 
 -------------------------------------------------------------------------------
 *Including Driver
-[ARM CMSIS] v5.40
+[ARM CMSIS] v5.7.0
 [Device Hal]
  R_CORE:Startup (initial operating clock, mode, etc.)
  R_I2C:I2C bus interface
  R_SPI:Serial peripheral interface
  R_USART:Serial communication interface
  R_SYS: -Clock generation circuit
-	-Power control mode of low-power-consumption functions
-	-Option setting memory
-	-Register write protection
-	-Interrupt controller unit
+    -Power control mode of low-power-consumption functions
+    -Option setting memory
+    -Register write protection
+    -Interrupt controller unit
  R_LPM:Low-power-consumption functions (other than power control mode)
  R_ADC:14-bit A/D converter
  R_DMAC:DMA controller
@@ -302,8 +303,8 @@ Rev110
 -Specification change
  R_PIN
  Separate the R_GPT_COM_Pinset / R_GPT_COM_Pinclr functions as follows:
- ÅE R_GPT_COMA_Pinset / R_GPT_COMA_Pinclr
- ÅE R_GPT_COMB_Pinset / R_GPT_COMA_Pinclr
+ -R_GPT_COMA_Pinset / R_GPT_COMA_Pinclr
+ -R_GPT_COMB_Pinset / R_GPT_COMA_Pinclr
 
 [20th/Jul/21]
 -Specification change
@@ -337,3 +338,12 @@ Rev110
  When using DTC, change the process up to the execution of the R_DTC_Close function
   *Added a process to clear the startup factor used in the driver and check that there are no valid DTC startup factors remaining.
   *Changed to the specification to execute R_DTC_Close processing only when there is no valid DTC activation factor.
+
+[17th/Dec/21]
+-Bug fix
+ R_CORE
+ Fixed the problem that the boot of the user program is delayed when the sub-clock is already oscillating at the beginning of the startup. (Tool News: R20TS0748)
+
+-Bug fix
+ R_PIN
+ Fixed the bug that the analog output of R12DA is not output. (R_R12DA_Pinset)
